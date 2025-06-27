@@ -1,16 +1,17 @@
 <?php 
 session_start();
-if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "admin") {
+if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
     include "DB_connection.php";
-    include "app/Model/User.php";
+    include "app/Model/Notification.php";
+    // include "app/Model/User.php";
 
-    $users = get_all_users($conn);
-  
+    $notifications = get_all_my_notifications($conn, $_SESSION['id']);
+
  ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Manage Users</title>
+	<title>Notifications</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
@@ -21,45 +22,45 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">Manage Users <a href="add-user.php">Add User</a></h4>
+			<h4 class="title">All Notifications</h4>
 			<?php if (isset($_GET['success'])) {?>
       	  	<div class="success" role="alert">
 			  <?php echo stripcslashes($_GET['success']); ?>
 			</div>
 		<?php } ?>
-			<?php if ($users != 0) { ?>
+			<?php if ($notifications != 0) { ?>
 			<table class="main-table">
 				<tr>
 					<th>#</th>
-					<th>Full Name</th>
-					<th>Username</th>
-					<th>role</th>
-					<th>Action</th>
+					<th>Message</th>
+					<th>Type</th>
+					<th>Date</th>
 				</tr>
-				<?php $i=0; foreach ($users as $user) { ?>
+				<?php $i=0; foreach ($notifications as $notification) { ?>
 				<tr>
 					<td><?=++$i?></td>
-					<td><?=$user['full_name']?></td>
-					<td><?=$user['username']?></td>
-					<td><?=$user['role']?></td>
-					<td>
-						<a href="edit-user.php?id=<?=$user['id']?>" class="edit-btn">Edit</a>
-						<a href="delete-user.php?id=<?=$user['id']?>" class="delete-btn">Delete</a>
-					</td>
+					<td><?=$notification['message']?></td>
+					<td><?=$notification['type']?></td>
+					<td><?=$notification['date']?></td>
 				</tr>
 			   <?php	} ?>
 			</table>
 		<?php }else { ?>
-			<h3>Empty</h3>
+			<h3>You have zero notification</h3>
 		<?php  }?>
 			
 		</section>
 	</div>
 
+
 <script type="text/javascript">
-	var active = document.querySelector("#navList li:nth-child(2)");
+	var active = document.querySelector("#navList li:nth-child(4)");
 	active.classList.add("active");
+
+
 </script>
+
+
 </body>
 </html>
 <?php }else{ 

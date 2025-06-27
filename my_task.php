@@ -1,16 +1,17 @@
 <?php 
 session_start();
-if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "admin") {
+if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
     include "DB_connection.php";
+    include "app/Model/Task.php";
     include "app/Model/User.php";
 
-    $users = get_all_users($conn);
-  
+    $tasks = get_all_tasks_by_id($conn, $_SESSION['id']);
+
  ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Manage Users</title>
+	<title>My Tasks</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
@@ -21,30 +22,32 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 	<div class="body">
 		<?php include "inc/nav.php" ?>
 		<section class="section-1">
-			<h4 class="title">Manage Users <a href="add-user.php">Add User</a></h4>
+			<h4 class="title">My Tasks</h4>
 			<?php if (isset($_GET['success'])) {?>
       	  	<div class="success" role="alert">
 			  <?php echo stripcslashes($_GET['success']); ?>
 			</div>
 		<?php } ?>
-			<?php if ($users != 0) { ?>
+			<?php if ($tasks != 0) { ?>
 			<table class="main-table">
 				<tr>
 					<th>#</th>
-					<th>Full Name</th>
-					<th>Username</th>
-					<th>role</th>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Status</th>
+					<th>Due Date</th>
 					<th>Action</th>
 				</tr>
-				<?php $i=0; foreach ($users as $user) { ?>
+				<?php $i=0; foreach ($tasks as $task) { ?>
 				<tr>
 					<td><?=++$i?></td>
-					<td><?=$user['full_name']?></td>
-					<td><?=$user['username']?></td>
-					<td><?=$user['role']?></td>
+					<td><?=$task['title']?></td>
+					<td><?=$task['description']?></td>
+					<td><?=$task['status']?></td>
+	            <td><?=$task['due_date']?></td>
+
 					<td>
-						<a href="edit-user.php?id=<?=$user['id']?>" class="edit-btn">Edit</a>
-						<a href="delete-user.php?id=<?=$user['id']?>" class="delete-btn">Delete</a>
+						<a href="edit-task-employee.php?id=<?=$task['id']?>" class="edit-btn">Edit</a>
 					</td>
 				</tr>
 			   <?php	} ?>
@@ -59,7 +62,10 @@ if (isset($_SESSION['role']) && isset($_SESSION['id']) && $_SESSION['role'] == "
 <script type="text/javascript">
 	var active = document.querySelector("#navList li:nth-child(2)");
 	active.classList.add("active");
+
+
 </script>
+
 </body>
 </html>
 <?php }else{ 
