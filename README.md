@@ -21,56 +21,107 @@ It's responsive, easy to use, and highly customizable for small teams or individ
 ## 📸 Sneak Peek
 
 > 🔻 Replace these placeholders with your own screenshots
+**Login Page**  
+![Login](https://github.com/user-attachments/assets/db00ddf2-d016-4b75-8b5e-26396345d417)
 
-![image](https://github.com/user-attachments/assets/example1.png)  
-![image](https://github.com/user-attachments/assets/example2.png)  
-![image](https://github.com/user-attachments/assets/example3.png)  
-![image](https://github.com/user-attachments/assets/example4.png)
+**Signup Page**  
+![Signup](https://github.com/user-attachments/assets/be4ba392-af58-4586-8329-26ff688bcc97)
+
+**Admin Dashboard**  
+![Admin Dashboard](https://github.com/user-attachments/assets/e08aeea7-4718-453c-b87f-b01f17e357d5)
+
+**Employee Dashboard**  
+![Employee Dashboard](https://github.com/user-attachments/assets/04f68169-74ce-4149-a5dd-e55af7f057de)
+
+**Users Page**  
+![Users](https://github.com/user-attachments/assets/be83e061-7c5e-404f-92c9-8783a770466d)
+
+**Create Task Page**  
+![Create Task](https://github.com/user-attachments/assets/a7005bb7-c9fb-45d9-9a78-03e30f90c5f0)
+
+**All Tasks Page**  
+![All Tasks](https://github.com/user-attachments/assets/a579baac-342c-4c4a-b057-953d96acf929)
 
 ---
 
 ## 🎬 Demo Video
 
-> 🎥 Replace with your own demo video
-
-[![Watch Demo](https://github.com/user-attachments/assets/demo-thumbnail.png)](https://github.com/user-attachments/assets/demo-video-link.mp4)
+https://github.com/user-attachments/assets/2d0f2692-b354-4b8a-bf6f-742bf5d50ab8
 
 ---
 
 ## 🛠️ Tech Stack
 
-- 🐘 **PHP** — Handles backend logic, authentication, and database operations.
-- 🎨 **HTML + CSS** — For building clean, responsive, and interactive frontend UI.
-- 🗃️ **MySQL** — Stores user and task information.
-- ⚡ **Vanilla JavaScript** — For minimal dynamic interactivity.
-- 🧪 **XAMPP** — For local development and server testing.
+- 🐘 **PHP** — Backend logic, authentication, and database operations.
+- 🎨 **HTML + CSS** — Clean and responsive UI.
+- 🗃️ **MySQL** — Stores user and task info.
+- ⚡ **Vanilla JavaScript** — For minor dynamic UI features.
+- 🧪 **XAMPP** — For local development.
+- 🌐 **Replit** — For live deployment and testing.
 
 ---
 
 ## ✨ Features
 
-- 🔐 **Login System**  
-  Session-based secure login for both Admin and Employee roles.
+- 🔐 **Secure Login System**  
+  Session-based login for both Admin and Employee roles.
 
 - 🧑‍💼 **Admin Dashboard**  
-  Add users, assign tasks, and view overall task progress.
+  Manage users, assign tasks, and track overall progress.
 
 - 👷‍♂️ **Employee Dashboard**  
-  See personal tasks, update status, and view due dates.
+  View personal tasks, update status, see deadlines.
 
 - 📊 **Task Overview Cards**  
-  Visual stats for all tasks: pending, completed, overdue, in progress, and due today.
+  Visual representation of task status — pending, completed, overdue, in progress, due today.
 
 - 🕒 **Deadline Highlights**  
-  Overdue and today's tasks are highlighted for quick action.
+  Color-coded overdue/today's tasks for better visibility.
 
-- 🎨 **Modern & Responsive UI**  
-  Works great across desktops and mobile devices with custom transitions and hover effects.
+- 💻 **Modern & Responsive UI**  
+  Custom transitions, hover effects, and mobile-friendly design.
 
-- 🔄 **Task Status Updates**  
-  Easily change task statuses from the dashboard.
+- 🔄 **Real-Time Task Status**  
+  Employees can update task progress from the dashboard.
 
 ---
+
+## 🧪 Try the App
+
+### 🟢 **Replit Link (Live)**  
+Hosted on Replit Free version:  
+🔗 `https://<your-link>.replit.dev`
+
+🕓 **Note:** Replit free hosting sleeps after inactivity.  
+If you want to test the app live and it's currently inactive:
+
+📧 **Email me** at `chatterjeeanata091@gmail.com`  
+→ I’ll activate it immediately for you.
+
+---
+
+### 🖥️ Try Locally
+
+You can run it on your system using **XAMPP** or **any LAMP stack**:
+
+#### ⚙️ Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/zenta-task.git
+    ```
+2. Import the SQL dump (task_management_db.sql) into your MySQL database using phpMyAdmin.
+3. Set database connection in DB_connection.php:
+   ```bash
+    $sName = "localhost";
+    $uName = "root";
+    $pass  = "";
+    $db_name = "task_management_db";
+   ```
+4. Start Apache & MySQL using XAMPP.
+5. Open http://localhost/zen-task/login.php in your browser.
+---
+
 
 ## 📁 Project Structure
 
@@ -90,23 +141,14 @@ zen-task/
 ├── README.md
 └── ...
 ```
-## Installation steps:
-```bash
-# 1. Clone the project
-git clone https://github.com/your-username/zen-task.git
-cd zen-task
 
-# 2. Move it to your htdocs folder (if using XAMPP)
-cp -r zen-task /xampp/htdocs/
+## Contact
+Have suggestions or want a demo?
 
-# 3. Import the database
-#    - Open phpMyAdmin
-#    - Create a new database (e.g., zen_task)
-#    - Import the provided .sql file
+📧 chatterjeeanata091@gmail.com
+📌 GitHub Issues or pull requests are welcome!
 
-# 4. Configure DB credentials in DB_connection.php
+This project helped me a lot in understanding the basic concepts of PHP and backend systems and allowed me to dive deeper into full-stack website development. It was a great hands-on experience to connect frontend with databases and user roles.
 
-# 5. Start Apache & MySQL in XAMPP
-#    - Visit: http://localhost/zen-task/
-
-```
+Thank you for checking out this project!
+Feel free to fork, improve, and share it with others.
