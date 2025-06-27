@@ -20,7 +20,7 @@ It's responsive, easy to use, and highly customizable for small teams or individ
 
 ## 📸 Sneak Peek
 
-> 🔻 Replace these placeholders with your own screenshots
+
 **Login Page**  
 ![Login](https://github.com/user-attachments/assets/db00ddf2-d016-4b75-8b5e-26396345d417)
 
