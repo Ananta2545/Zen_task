@@ -11,7 +11,7 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 15px 30px;
-	background: #1e1f26;
+	background: linear-gradient(to right, #2c2c54, #40407a);
 	color: #fff;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -23,13 +23,19 @@
 }
 
 .u-name b {
-	color: #00bcd4;
+	color: #70a1ff;
 }
 
 .header i {
 	font-size: 28px;
 	cursor: pointer;
 	color: #fff;
+	transition: transform 0.3s;
+}
+
+.header i:hover {
+	transform: scale(1.1);
+	color: #70a1ff;
 }
 
 .header .notification {
@@ -41,7 +47,7 @@
 	position: absolute;
 	top: 5px;
 	left: 5px;
-	background: #ff3b3b;
+	background: #ff4757;
 	width: 12px;
 	height: 12px;
 	border-radius: 50%;
@@ -55,7 +61,7 @@
 }
 
 .header .notification:hover i {
-	color: #00bcd4;
+	color: #70a1ff;
 }
 
 .notification-bar {
@@ -64,7 +70,7 @@
 	max-width: 300px;
 	position: absolute;
 	right: 0;
-	background: #f5f5f5;
+	background: #f7f1ff;
 	padding: 10px;
 	border-radius: 10px;
 	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -75,16 +81,21 @@
 	list-style: none;
 	padding: 10px;
 	border-bottom: 1px solid #ddd;
+	transition: background 0.3s;
+}
+
+.notification-bar ul li:hover {
+	background: #dff9fb;
 }
 
 .notification-bar ul li a {
 	text-decoration: none;
-	color: #222;
+	color: #2f3542;
 	display: block;
 }
 
 .notification-bar ul li:nth-child(even) {
-	background: #fafafa;
+	background: #f1f2f6;
 }
 
 .open-notification {
@@ -106,6 +117,11 @@
 	width: 80px;
 	border-radius: 50%;
 	box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+	transition: transform 0.3s ease-in-out;
+}
+
+.user-p img:hover {
+	transform: rotate(5deg) scale(1.05);
 }
 
 .user-p h4 {
@@ -116,7 +132,7 @@
 
 .side-bar {
 	width: 250px;
-	background: #1e1f26;
+	background: #2f3542;
 	min-height: 100vh;
 	transition: width 0.4s ease-in-out;
 	overflow-x: hidden;
@@ -134,7 +150,7 @@
 .side-bar ul li {
 	font-size: 16px;
 	padding: 15px 20px;
-	transition: background 0.3s;
+	transition: background 0.3s, padding-left 0.3s;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -142,11 +158,12 @@
 }
 
 .side-bar ul li:hover {
-	background: #00bcd4;
+	background: #706fd3;
+	padding-left: 30px;
 }
 
 .side-bar ul li.active {
-	background: #00bcd4;
+	background: #70a1ff;
 }
 
 .side-bar ul li a {
@@ -159,6 +176,11 @@
 .side-bar ul li a i {
 	font-size: 20px;
 	margin-right: 10px;
+	transition: transform 0.3s;
+}
+
+.side-bar ul li:hover i {
+	transform: scale(1.1);
 }
 
 .side-bar .active a {
@@ -192,7 +214,7 @@
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: #f5f5f5;
+	background: linear-gradient(to right, #c7ecee, #dff9fb);
 }
 
 .login-body form {
@@ -202,11 +224,12 @@
 	padding: 30px;
 	border-radius: 10px;
 	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+	animation: fadeIn 0.5s ease;
 }
 
 .section-1 {
 	padding: 30px;
-	background: #fffef2;
+	background: #f8f1ff;
 	width: 100%;
 }
 
@@ -217,7 +240,7 @@
 
 .section-1 .title a,
 .section-1 .title-2 .btn {
-	background: #00cf22;
+	background: #706fd3;
 	color: #fff;
 	font-size: 16px;
 	padding: 10px 15px;
@@ -231,7 +254,8 @@
 .section-1 .title a:hover,
 .section-1 .title-2 .btn:hover {
 	transform: translateY(-3px);
-	opacity: 0.8;
+	opacity: 0.85;
+	background: #575fcf;
 }
 
 .section-1 .title-2 a {
@@ -251,6 +275,11 @@
 	border: 1px solid #aaa;
 	padding: 10px;
 	text-align: left;
+	transition: background 0.3s;
+}
+
+.main-table tr:hover {
+	background: #ecf0f1;
 }
 
 .delete-btn,
@@ -267,20 +296,20 @@
 }
 
 .delete-btn {
-	background: #e00051;
+	background: #ff4757;
 }
 
 .delete-btn:hover {
-	background: #c80045;
+	background: #ff6b81;
 	transform: scale(1.05);
 }
 
 .edit-btn {
-	background: #006ce0;
+	background: #1e90ff;
 }
 
 .edit-btn:hover {
-	background: #005ac0;
+	background: #3742fa;
 	transform: scale(1.05);
 }
 
@@ -306,20 +335,20 @@
 }
 
 .input-1:focus {
-	border-color: #555;
+	border-color: #706fd3;
 }
 
 .danger {
-	background: #ff98aa;
-	color: #b20008;
+	background: #ffcccc;
+	color: #c0392b;
 	padding: 10px;
 	margin-bottom: 10px;
 	border-radius: 5px;
 }
 
 .success {
-	background: #80ce91;
-	color: #009d22;
+	background: #c8f7c5;
+	color: #2ecc71;
 	padding: 10px;
 	margin-bottom: 10px;
 	border-radius: 5px;
@@ -336,24 +365,29 @@
 }
 
 .dashboard-item {
-	background: #262931;
+	background: linear-gradient(to bottom right, #2f3542, #40407a);
 	width: 200px;
 	padding: 30px 10px;
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-	transition: transform 0.3s;
+	transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .dashboard-item:hover {
-	transform: translateY(-5px);
+	transform: translateY(-5px) scale(1.03);
+	box-shadow: 0 12px 20px rgba(0,0,0,0.3);
 }
 
 .dashboard-item i {
-	color: #00bcd4;
+	color: #70a1ff;
 	font-size: 30px;
 	margin-bottom: 10px;
 	transition: color 0.3s;
+}
+
+.dashboard-item:hover i {
+	color: #ffffff;
 }
 
 .dashboard-item span {
