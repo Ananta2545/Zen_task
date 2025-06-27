@@ -89,7 +89,24 @@ zen-task/
 ├── DB_connection.php
 ├── README.md
 └── ...
+```
+## Installation steps:
+```bash
+# 1. Clone the project
+git clone https://github.com/your-username/zen-task.git
+cd zen-task
 
----
+# 2. Move it to your htdocs folder (if using XAMPP)
+cp -r zen-task /xampp/htdocs/
 
----
+# 3. Import the database
+#    - Open phpMyAdmin
+#    - Create a new database (e.g., zen_task)
+#    - Import the provided .sql file
+
+# 4. Configure DB credentials in DB_connection.php
+
+# 5. Start Apache & MySQL in XAMPP
+#    - Visit: http://localhost/zen-task/
+
+```
