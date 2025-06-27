@@ -13,6 +13,7 @@ if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
 <head>
 	<title>Notifications</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="img/png" href="img/favicon.png">
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
