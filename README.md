@@ -90,7 +90,7 @@ https://github.com/user-attachments/assets/2d0f2692-b354-4b8a-bf6f-742bf5d50ab8
 
 ### 🟢 **Replit Link (Live)**  
 Hosted on Replit Free version:  
-🔗 `https://<your-link>.replit.dev`
+🔗 `https://dcfa65bb-c923-4fa4-9307-5f4df978e9d3-00-326rb7p7r6ok9.riker.replit.dev/`
 
 🕓 **Note:** Replit free hosting sleeps after inactivity.  
 If you want to test the app live and it's currently inactive:
